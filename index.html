@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lecer · Arshia, Java developer &amp; osu! player</title>
+  <meta name="description" content="Arshia (Lecer), a Java developer from Tehran who builds the custom plugins behind the Dumble Land Minecraft server. Also: a Hyprland rice, small Rust tools, osu! and a lot of metal.">
+  <meta name="author" content="Arshia (Lecer)">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0c0a12">
+  <link rel="canonical" href="https://lecer69.github.io/">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Lecer">
+  <meta property="og:title" content="Lecer · Arshia">
+  <meta property="og:description" content="Java developer behind Dumble Land's plugins. Hyprland rice, Rust tools, osu! and metal.">
+  <meta property="og:url" content="https://lecer69.github.io/">
+  <meta property="og:image" content="https://lecer69.github.io/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Lecer: Java developer, osu! player. A Yuyuko-themed card with cherry blossoms and ghost butterflies.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@Lecerosu">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&amp;family=JetBrains+Mono:wght@400..500&amp;family=Shippori+Mincho:wght@700&amp;display=swap">
+  <link rel="preload" href="assets/fonts/shippori-jp.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Arshia",
+    "alternateName": "Lecer",
+    "url": "https://lecer69.github.io/",
+    "image": "https://lecer69.github.io/assets/img/avatar.webp",
+    "jobTitle": "Java developer",
+    "worksFor": { "@type": "Organization", "name": "Dumble Land", "url": "https://github.com/Dumble-Development" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Tehran", "addressCountry": "IR" },
+    "sameAs": [
+      "https://github.com/Lecer69",
+      "https://x.com/Lecerosu",
+      "https://osu.ppy.sh/users/34021726",
+      "https://open.spotify.com/user/o24onkbiz6sjc26oyu5uyhu13"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Shared gradients + icon sprite. Brand icons from Simple Icons (CC0). -->
+  <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <radialGradient id="g-petal-pink" cx="0" cy="0" r="11" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#e9779f"/>
+        <stop offset=".42" stop-color="#f6aecb"/>
+        <stop offset="1" stop-color="#ffe5ef"/>
+      </radialGradient>
+      <radialGradient id="g-petal-white" cx="0" cy="0" r="11" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#f19bbf"/>
+        <stop offset=".46" stop-color="#fde2ed"/>
+        <stop offset="1" stop-color="#fff7fa"/>
+      </radialGradient>
+      <linearGradient id="g-wing-pink" x1="1" y1=".5" x2="0" y2=".2">
+        <stop offset="0" stop-color="#ffe3ef" stop-opacity=".95"/>
+        <stop offset=".55" stop-color="#f5a3c0" stop-opacity=".85"/>
+        <stop offset="1" stop-color="#b9a6ef" stop-opacity=".55"/>
+      </linearGradient>
+      <linearGradient id="g-wing-blue" x1="1" y1=".5" x2="0" y2=".2">
+        <stop offset="0" stop-color="#eef4ff" stop-opacity=".95"/>
+        <stop offset=".55" stop-color="#a9c7f2" stop-opacity=".85"/>
+        <stop offset="1" stop-color="#b9a6ef" stop-opacity=".5"/>
+      </linearGradient>
+      <path id="petal" d="M0 0C-4.4-2.4-5.2-8-1.5-10.9L0-9.4l1.5-1.5C5.2-8 4.4-2.4 0 0Z"/>
+      <g id="stamens">
+        <circle r="1.7" fill="#e0679a"/>
+        <g fill="#ffd98f"><circle cy="-3.6" r=".7"/><circle cx="3.4" cy="-1.1" r=".7"/><circle cx="2.1" cy="2.9" r=".7"/><circle cx="-2.1" cy="2.9" r=".7"/><circle cx="-3.4" cy="-1.1" r=".7"/></g>
+      </g>
+      <symbol id="blossom" viewBox="-12 -12 24 24" overflow="visible">
+        <g fill="url(#g-petal-pink)"><use href="#petal"/><use href="#petal" transform="rotate(72)"/><use href="#petal" transform="rotate(144)"/><use href="#petal" transform="rotate(216)"/><use href="#petal" transform="rotate(288)"/></g>
+        <use href="#stamens"/>
+      </symbol>
+      <symbol id="blossom-w" viewBox="-12 -12 24 24" overflow="visible">
+        <g fill="url(#g-petal-white)"><use href="#petal"/><use href="#petal" transform="rotate(72)"/><use href="#petal" transform="rotate(144)"/><use href="#petal" transform="rotate(216)"/><use href="#petal" transform="rotate(288)"/></g>
+        <use href="#stamens"/>
+      </symbol>
+    </defs>
+
+    <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="currentColor"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></symbol>
+    <symbol id="i-discord" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></symbol>
+    <symbol id="i-spotify" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></symbol>
+    <symbol id="i-osu" viewBox="0 0 24 24" fill="currentColor"><path d="M7.698 10.362c-.1855-.2184-.4189-.3905-.7002-.5162-.2813-.1257-.6104-.1885-.9874-.1885s-.7046.0628-.9829.1885-.5088.2978-.6912.5162c-.1827.2185-.3203.4773-.413.7765-.0928.2993-.1391.6194-.1391.9605 0 .3412.0463.6584.1391.9516.0927.2933.2303.5491.413.7675.1824.2185.4129.3891.6912.5116.2783.1226.6059.1841.9829.1841s.7061-.0615.9875-.1841c.2813-.1226.5146-.2931.7002-.5116.1855-.2184.3231-.4742.413-.7675.0897-.2931.1346-.6104.1346-.9516 0-.3411-.0449-.6612-.1346-.9605-.0899-.2992-.2276-.558-.4131-.7765zm-.965 2.8096c-.1467.2484-.3875.3725-.7227.3725-.3291 0-.567-.1241-.7136-.3725-.1467-.2483-.2199-.6059-.2199-1.0727s.0732-.8243.2199-1.0727c.1466-.2482.3844-.3725.7136-.3725.3352 0 .5759.1243.7227.3725.1466.2484.2199.6059.2199 1.0727.0001.4668-.0733.8245-.2199 1.0727zm11.8894-.8303-.0898-4.3896a4.5409 4.5409 0 0 1 .6912-.0539c.2334 0 .4668.0179.7002.0539l-.0898 4.3896c-.2096.0359-.41.0538-.6015.0538a3.4957 3.4957 0 0 1-.6103-.0538zm1.3196 1.4003c0 .2215-.0179.443-.0538.6643a4.2055 4.2055 0 0 1-.6553.0538 4.1414 4.1414 0 0 1-.6642-.0538 4.0882 4.0882 0 0 1-.0539-.6553c0-.2154.018-.4367.0539-.6643a4.0876 4.0876 0 0 1 .6552-.0538c.2155 0 .4368.018.6643.0538.0359.2276.0538.446.0538.6553zm-3.2226-4.0305c.2095 0 .422.018.6373.0539v4.4614c-.1916.0659-.4443.1302-.7585.193-.3141.0629-.6418.0943-.9829.0943-.3052 0-.5985-.024-.8798-.0718-.2813-.0479-.5282-.1495-.7405-.3052-.2125-.1555-.3815-.3829-.5072-.6823-.1257-.2991-.1885-.697-.1885-1.1938V9.765a3.8725 3.8725 0 0 1 .6373-.0539c.2094 0 .4219.018.6373.0539v2.4596c0 .2455.0194.4474.0584.6059.0388.1586.0988.2843.1795.377a.6606.6606 0 0 0 .3007.1974c.1197.0391.2603.0584.4219.0584.2214 0 .407-.0209.5566-.0628V9.765a3.8218 3.8218 0 0 1 .6284-.0539zm-4.3625 2.6841c.0538.1497.0808.3321.0808.5476 0 .2215-.0464.428-.1392.6194-.0928.1916-.2274.3577-.4039.4982-.1766.1407-.3905.2514-.6418.3322-.2514.0808-.5356.1212-.8528.1212a5.2984 5.2984 0 0 1-.395-.0135 3.1226 3.1226 0 0 1-.3456-.0448 4.0482 4.0482 0 0 1-.3277-.0763 3.9336 3.9336 0 0 1-.35-.1166 2.5768 2.5768 0 0 1 .0852-.4893 3.0737 3.0737 0 0 1 .1751-.4802c.1975.0779.3844.1362.561.1751.1765.039.3605.0584.5521.0584.0838 0 .175-.0075.2738-.0225a.9945.9945 0 0 0 .2737-.0808.6467.6467 0 0 0 .2109-.1526c.0569-.0628.0853-.145.0853-.2469 0-.1436-.0434-.2469-.1302-.3097-.0868-.0628-.208-.1181-.3636-.1661l-.5565-.1616c-.3352-.0956-.5969-.2379-.7855-.4263-.1885-.1886-.2827-.4713-.2827-.8484 0-.4547.163-.8108.4892-1.0682.3261-.2573.7705-.386 1.333-.386.2334 0 .4638.0211.6913.0629.2273.0419.4578.1048.6912.1885-.012.1557-.0419.3173-.0897.4847-.048.1676-.1048.3142-.1706.4398a3.58 3.58 0 0 0-.4757-.1571 2.18 2.18 0 0 0-.5477-.0673c-.2034 0-.3621.0314-.4758.0943-.1137.0629-.1705.1631-.1705.3007 0 .1317.0403.2244.1211.2783.0809.0538.1959.1048.3456.1526l.5117.1526c.1675.048.3187.1063.4533.1751.1347.0688.2498.1541.3456.2558.0958.1016.1707.2272.2246.3768zM12 0C5.3726 0 0 5.3726 0 12.0001 0 18.6273 5.3726 24 12 24c6.6275 0 12-5.3727 12-11.9999C24 5.3726 18.6275 0 12 0zm0 22.8c-5.9647 0-10.8-4.8354-10.8-10.7999C1.2 6.0353 6.0353 1.2 12 1.2s10.8 4.8353 10.8 10.8001C22.8 17.9646 17.9647 22.8 12 22.8z"/></symbol>
+    <symbol id="i-arch" viewBox="0 0 24 24" fill="currentColor"><path d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 01-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 01-.146 1.243c2.58.505 5.352 1.787 8.914 3.844-.702-1.293-1.33-2.459-1.929-3.57-.943-.73-1.926-1.682-3.933-2.713 1.38.359 2.367.772 3.137 1.234-6.09-11.334-6.582-12.84-8.67-17.74z"/></symbol>
+
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M5 15H4.5A1.5 1.5 0 0 1 3 13.5v-9A1.5 1.5 0 0 1 4.5 3h9A1.5 1.5 0 0 1 15 4.5V5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.8 2.75 5.8 6.35.8-4.65 4.4 1.2 6.3L12 17l-5.65 3.1 1.2-6.3L2.9 9.4l6.35-.8Z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.6-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14Z"/></symbol>
+    <symbol id="i-trend-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M14 7h7v7"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-emblem" viewBox="0 0 32 32">
+      <path d="M16 5.5 27.5 26h-23Z" fill="#f6eff8" stroke="#f6eff8" stroke-width="2.6" stroke-linejoin="round"/>
+      <path d="M16 19.5a1.2 1.2 0 0 1 2.4 0 2.4 2.4 0 0 1-4.8 0 3.6 3.6 0 0 1 7.2 0" fill="none" stroke="#e5484d" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <canvas id="petals" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="#top">
+        <svg class="emblem" aria-hidden="true"><use href="#i-emblem"/></svg>
+        <span>Lecer</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#dumble">Dumble Land</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#setup">Setup</a></li>
+        <li><a href="#osu">osu!</a></li>
+        <li><a href="#music">Music</a></li>
+      </ul>
+      <a class="nav-cta" href="#contact">Say hi</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ───────────── Hero ───────────── -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Hello, I'm Arshia</p>
+          <h1 class="hero-title" id="hero-title">Lecer</h1>
+          <p class="hero-lead">Java developer from Tehran. I write the custom plugins that run <strong>Dumble Land</strong>, an Iranian Minecraft server. In between, I rice Hyprland, build small Rust tools and play far too much osu! to far too much metal.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#dumble">See my work <svg class="i" aria-hidden="true"><use href="#i-arrow-down"/></svg></a>
+            <a class="btn btn-ghost" href="https://github.com/Lecer69" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-github"/></svg> GitHub</a>
+            <ul class="socials" aria-label="Elsewhere">
+              <li><a class="icon-btn" href="https://x.com/Lecerosu" target="_blank" rel="noopener" aria-label="X (Twitter): @Lecerosu" data-tip="@Lecerosu"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></a></li>
+              <li><button class="icon-btn" type="button" data-copy="lecer" aria-label="Copy Discord username: lecer" data-tip="Discord: lecer"><svg class="i" aria-hidden="true"><use href="#i-discord"/></svg></button></li>
+              <li><a class="icon-btn" href="https://osu.ppy.sh/users/34021726" target="_blank" rel="noopener" aria-label="osu! profile: Lecer" data-tip="osu!"><svg class="i" aria-hidden="true"><use href="#i-osu"/></svg></a></li>
+              <li><a class="icon-btn" href="https://open.spotify.com/user/o24onkbiz6sjc26oyu5uyhu13" target="_blank" rel="noopener" aria-label="Spotify profile: Lecer" data-tip="Spotify"><svg class="i" aria-hidden="true"><use href="#i-spotify"/></svg></a></li>
+            </ul>
+          </div>
+
+          <p class="status"><span class="status-dot" aria-hidden="true"></span>Not taking projects right now</p>
+        </div>
+
+        <div class="hero-art">
+          <div class="moon">
+            <svg class="ring" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+              <defs><path id="ring-path" d="M30 200a170 170 0 1 1 340 0a170 170 0 1 1-340 0"/></defs>
+              <circle class="ring-line" cx="200" cy="200" r="194"/>
+              <circle class="ring-line ring-line--dash" cx="200" cy="200" r="157"/>
+              <text class="ring-text"><textPath href="#ring-path" textLength="1064" lengthAdjust="spacing">反魂蝶 · Resurrection Butterfly · 幽雅に咲かせ、墨染の桜 · Border of Life · 反魂蝶 · Resurrection Butterfly · 幽雅に咲かせ、墨染の桜 · Border of Life ·</textPath></text>
+            </svg>
+
+            <img class="avatar" src="assets/img/avatar.webp" width="440" height="440" alt="Lecer's avatar: Saigyouji Yuyuko with cherry blossoms in her hat" fetchpriority="high">
+
+            <svg class="branch" viewBox="0 0 400 260" aria-hidden="true" focusable="false">
+              <g class="branch-wood" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M404 38C372 40 336 50 300 62" stroke-width="7"/>
+                <path d="M300 62C272 72 246 86 220 96S172 110 150 118" stroke-width="5"/>
+                <path d="M150 118C122 128 96 146 70 160S36 172 16 172" stroke-width="3.2"/>
+                <path d="M300 62C296 46 292 32 284 20M220 96C224 112 230 126 238 140M150 118C140 104 130 94 118 86M70 160C72 174 76 186 80 198M342 48C350 60 358 68 372 72" stroke-width="2.2"/>
+              </g>
+              <g class="branch-buds" fill="#f08db5">
+                <ellipse cx="277" cy="9" rx="2.6" ry="3.6" transform="rotate(-20 277 9)"/>
+                <ellipse cx="111" cy="78" rx="2.4" ry="3.4" transform="rotate(-40 111 78)"/>
+                <ellipse cx="84" cy="208" rx="2.4" ry="3.4" transform="rotate(15 84 208)"/>
+                <ellipse cx="382" cy="75" rx="2.4" ry="3.2" transform="rotate(70 382 75)"/>
+              </g>
+              <g>
+                <use href="#blossom" x="-16" y="-16" width="32" height="32" transform="translate(284 19) rotate(12)"/>
+                <use href="#blossom-w" x="-12" y="-12" width="24" height="24" transform="translate(307 57) rotate(40)"/>
+                <use href="#blossom" x="-13" y="-13" width="26" height="26" transform="translate(371 71) rotate(25)"/>
+                <use href="#blossom-w" x="-8" y="-8" width="16" height="16" transform="translate(344 45) rotate(70)"/>
+                <use href="#blossom" x="-10" y="-10" width="20" height="20" transform="translate(262 77)"/>
+                <use href="#blossom-w" x="-15" y="-15" width="30" height="30" transform="translate(238 141) rotate(20)"/>
+                <use href="#blossom" x="-9" y="-9" width="18" height="18" transform="translate(221 94) rotate(50)"/>
+                <use href="#blossom-w" x="-7" y="-7" width="14" height="14" transform="translate(190 106) rotate(10)"/>
+                <use href="#blossom" x="-15" y="-15" width="30" height="30" transform="translate(118 86) rotate(15)"/>
+                <use href="#blossom-w" x="-11" y="-11" width="22" height="22" transform="translate(149 120) rotate(60)"/>
+                <use href="#blossom" x="-9" y="-9" width="18" height="18" transform="translate(100 141) rotate(30)"/>
+                <use href="#blossom-w" x="-13" y="-13" width="26" height="26" transform="translate(80 198) rotate(5)"/>
+                <use href="#blossom" x="-10" y="-10" width="20" height="20" transform="translate(52 166) rotate(45)"/>
+                <use href="#blossom-w" x="-8" y="-8" width="16" height="16" transform="translate(17 172)"/>
+              </g>
+            </svg>
+
+            <span class="bfly bfly-1" aria-hidden="true">
+              <svg viewBox="-24 -20 48 40" focusable="false">
+                <g class="wing"><path fill="url(#g-wing-pink)" d="M-1.5-2C-6-15-21-19-22-8-22.5-1-14 2-1.5 0Z"/><path fill="url(#g-wing-pink)" d="M-1.5 1C-9 2-16 9-13 15-10 19-4 13-1.5 3Z"/></g>
+                <g transform="scale(-1 1)"><g class="wing"><path fill="url(#g-wing-pink)" d="M-1.5-2C-6-15-21-19-22-8-22.5-1-14 2-1.5 0Z"/><path fill="url(#g-wing-pink)" d="M-1.5 1C-9 2-16 9-13 15-10 19-4 13-1.5 3Z"/></g></g>
+                <path class="b-body" d="M0-7C.9-4 .9 6 0 10-.9 6-.9-4 0-7Z"/>
+                <path class="b-ant" d="M-.4-6.5C-2-11-4-13-6.5-14M.4-6.5C2-11 4-13 6.5-14"/>
+              </svg>
+            </span>
+            <span class="bfly bfly-2" aria-hidden="true">
+              <svg viewBox="-24 -20 48 40" focusable="false">
+                <g class="wing"><path fill="url(#g-wing-blue)" d="M-1.5-2C-6-15-21-19-22-8-22.5-1-14 2-1.5 0Z"/><path fill="url(#g-wing-blue)" d="M-1.5 1C-9 2-16 9-13 15-10 19-4 13-1.5 3Z"/></g>
+                <g transform="scale(-1 1)"><g class="wing"><path fill="url(#g-wing-blue)" d="M-1.5-2C-6-15-21-19-22-8-22.5-1-14 2-1.5 0Z"/><path fill="url(#g-wing-blue)" d="M-1.5 1C-9 2-16 9-13 15-10 19-4 13-1.5 3Z"/></g></g>
+                <path class="b-body" d="M0-7C.9-4 .9 6 0 10-.9 6-.9-4 0-7Z"/>
+                <path class="b-ant" d="M-.4-6.5C-2-11-4-13-6.5-14M.4-6.5C2-11 4-13 6.5-14"/>
+              </svg>
+            </span>
+            <span class="bfly bfly-3" aria-hidden="true">
+              <svg viewBox="-24 -20 48 40" focusable="false">
+                <g class="wing"><path fill="url(#g-wing-pink)" d="M-1.5-2C-6-15-21-19-22-8-22.5-1-14 2-1.5 0Z"/><path fill="url(#g-wing-pink)" d="M-1.5 1C-9 2-16 9-13 15-10 19-4 13-1.5 3Z"/></g>
+                <g transform="scale(-1 1)"><g class="wing"><path fill="url(#g-wing-pink)" d="M-1.5-2C-6-15-21-19-22-8-22.5-1-14 2-1.5 0Z"/><path fill="url(#g-wing-pink)" d="M-1.5 1C-9 2-16 9-13 15-10 19-4 13-1.5 3Z"/></g></g>
+                <path class="b-body" d="M0-7C.9-4 .9 6 0 10-.9 6-.9-4 0-7Z"/>
+                <path class="b-ant" d="M-.4-6.5C-2-11-4-13-6.5-14M.4-6.5C2-11 4-13 6.5-14"/>
+              </svg>
+            </span>
+          </div>
+          <p class="tategaki" lang="ja" aria-hidden="true">幽雅に咲かせ、墨染の桜</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <dl class="stats">
+          <div class="stat"><dt>commits since 2022</dt><dd>4,000+</dd></div>
+          <div class="stat"><dt>Dumble Land plugins</dt><dd>20+</dd></div>
+          <div class="stat"><dt>AUR packages</dt><dd>2</dd></div>
+          <div class="stat"><dt>osu! rank in Iran</dt><dd>#9</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ───────────── 壱 · Dumble Land ───────────── -->
+    <section class="section" id="dumble" aria-labelledby="dumble-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-num" lang="ja" aria-hidden="true">壱</span>
+          <p class="eyebrow">Dumble Land</p>
+          <h2 id="dumble-title">The Minecraft server I build</h2>
+          <p class="section-lead">Dumble Land is an Iranian Minecraft server, and a lot of it runs on our own code. Together with <a href="https://github.com/TheDumbledodo" target="_blank" rel="noopener">The_Dumbledodo</a> I've written most of its plugins: gameplay, economy, the proxy network and the Discord side. The repos are private, so instead of links, here's what each one does.</p>
+          <ul class="chips" aria-label="Stack">
+            <li>Java 25</li><li>Paper</li><li>Velocity</li><li>Blueprint</li><li>packetevents</li><li>Slimefun</li><li>JDA</li><li>Gradle</li>
+          </ul>
+        </header>
+
+        <div class="plugin-grid">
+          <article class="card plugin reveal" style="--i:0">
+            <div class="plugin-top"><h3>DumbolRolePlay</h3><span class="private"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Private</span></div>
+            <p>A whole roleplay gamemode: jobs and professions, gangs, bounties and wanted levels, robberies and prison, ATMs, taxis, medkits and revives, custom items and loot boxes.</p>
+            <p class="plugin-meta"><span>432 commits</span><span>~21k lines</span><span>since 2025</span></p>
+          </article>
+          <article class="card plugin reveal" style="--i:1">
+            <div class="plugin-top"><h3>DumbolExpansion</h3><span class="private"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Private</span></div>
+            <p>Our own Slimefun addon: generators, quarries, excavators, capacitors, storage and research, with dozens of custom items and machines.</p>
+            <p class="plugin-meta"><span>663 commits</span><span>~7k lines</span><span>since 2023</span></p>
+          </article>
+          <article class="card plugin reveal" style="--i:2">
+            <div class="plugin-top"><h3>DumbolNetwork</h3><span class="private"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Private</span></div>
+            <p>The Velocity proxy plugin and its Paper bridge: the layer that connects every server on the network, from chat and commands to shared services.</p>
+            <p class="plugin-meta"><span>313 commits</span><span>~12k lines</span><span>since 2023</span></p>
+          </article>
+          <article class="card plugin reveal" style="--i:3">
+            <div class="plugin-top"><h3>DumbolGameFramework</h3><span class="private"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Private</span></div>
+            <p>The minigame framework behind SuperCrown: arenas, teams and parties, bosses, runes, NPCs, a battle pass and leaderboards.</p>
+            <p class="plugin-meta"><span>277 commits</span><span>~13k lines</span><span>2024–2025</span></p>
+          </article>
+          <article class="card plugin reveal" style="--i:4">
+            <div class="plugin-top"><h3>DumbolEssentials</h3><span class="private"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Private</span></div>
+            <p>Server essentials, our way: 60+ commands for players, staff and ranks, plus combat and protection modules.</p>
+            <p class="plugin-meta"><span>206 commits</span><span>~12k lines</span><span>since 2025</span></p>
+          </article>
+          <article class="card plugin reveal" style="--i:5">
+            <div class="plugin-top"><h3>DumbolCore</h3><span class="private"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Private</span></div>
+            <p>The survival core from 2023 to 2025: economy, server modules and the glue between Slimefun, ItemsAdder and the rest.</p>
+            <p class="plugin-meta"><span>499 commits</span><span>~9k lines</span><span>2023–2025</span></p>
+          </article>
+        </div>
+        <p class="footnote reveal">Commit counts are mine; line counts are for the whole project.</p>
+
+        <div class="more reveal">
+          <h3 class="sub-title">Also on the server</h3>
+          <ul class="mini-list">
+            <li><strong>DumbolClaim</strong><span>Land claims, plus a claim-fly add-on</span></li>
+            <li><strong>DumbolCommons</strong><span>The shared library the other plugins build on</span></li>
+            <li><strong>DumbolDoormendez</strong><span>An event gamemode with roles, gates and spectators</span></li>
+            <li><strong>DumbolApartments</strong><span>Buyable apartments and houses, with access control and transfers</span></li>
+            <li><strong>DumbolEnchantments</strong><span>Custom enchantments</span></li>
+            <li><strong>DumbolCurrency</strong><span>Multi-currency economy with Vault support</span></li>
+            <li><strong>DumbolDiscord</strong><span>Discord bot for tickets, player reports and roles</span></li>
+            <li><strong>DumbolTrade</strong><span>Player-to-player trading</span></li>
+            <li><strong>DumbolFactory</strong><span>Player factories with upgrades and perks</span></li>
+            <li><strong>DumbolChestShop</strong><span>Chest shops with holograms</span></li>
+            <li><strong>DumbolHologram</strong><span>Lightweight packet-based holograms</span></li>
+          </ul>
+          <p class="footnote">Plus patched forks of Slimefun, Networks, VehiclesPlus and PlayerWarps.</p>
+        </div>
+
+        <div class="earlier reveal">
+          <h3 class="sub-title">Before Dumble Land</h3>
+          <ol class="timeline">
+            <li><span class="year">2024</span><strong>Mystic-Lava</strong><span>An advanced floor-is-lava minigame</span></li>
+            <li><span class="year">2024</span><strong>AnimeMod</strong><span>A private Fabric mod with custom models, sounds and shaders</span></li>
+            <li><span class="year">2023</span><strong>Paradise City</strong><span>Plugins for an earlier server: Slimefun content, a Discord bot, music and a login server</span></li>
+            <li><span class="year">2023</span><strong>IR-RankedBedwars</strong><span>A ranked BedWars bot for Discord, with rank and profile cards</span></li>
+            <li><span class="year">2023</span><strong>DiscordAPI</strong><span>An annotation-driven command framework on top of JDA</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── 弐 · Open source ───────────── -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-num" lang="ja" aria-hidden="true">弐</span>
+          <p class="eyebrow">Open source</p>
+          <h2 id="projects-title">Small tools, shipped in public</h2>
+          <p class="section-lead">Things I built for my own Arch + Hyprland setup, then cleaned up enough to share.</p>
+        </header>
+
+        <div class="project-grid">
+          <article class="card project project-wide reveal" style="--i:0">
+            <div class="project-body">
+              <div class="project-top">
+                <h3><a href="https://github.com/Lecer69/LSSH" target="_blank" rel="noopener">LSSH</a></h3>
+                <span class="tag">v0.3.1</span>
+              </div>
+              <p class="project-meta"><span class="lang lang-rust">Rust</span><span class="stars"><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><span data-stars="LSSH">1</span></span><span>CLI</span></p>
+              <p>A simple SSH server manager for the terminal. Save servers once and connect by name, keep passwords in the OS keyring, run commands and copy files across several servers at once, and watch a btop-style live stats bar while you work.</p>
+              <div class="install">
+                <code>yay -S lssh</code>
+                <button class="copy-btn" type="button" data-copy="yay -S lssh" aria-label="Copy install command: yay -S lssh"><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg><span class="copy-label">Copy</span></button>
+              </div>
+              <p class="project-links"><a href="https://github.com/Lecer69/LSSH" target="_blank" rel="noopener">Repository <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a><a href="https://github.com/Lecer69/LSSH/releases" target="_blank" rel="noopener">Releases <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+            </div>
+            <div class="term" aria-label="Example LSSH session showing the live stats bar" role="img">
+              <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>lssh web</span></div>
+              <div class="term-body" aria-hidden="true">
+                <p><span class="t-prompt">~ ›</span> lssh web</p>
+                <p class="t-dim">root@web-01:~# uptime</p>
+                <p class="t-dim">&nbsp;12:41:07 up 3 days, 16:02, load average: 0.61</p>
+                <p class="t-gap"></p>
+                <p class="t-bar"><span class="t-name">web</span> root@web-01 <span class="t-dim">· up 3d 16h · load 0.61 0.61 0.43 · 4 cores</span></p>
+                <p class="t-bar">
+                  <span class="t-k">CPU</span><span class="spark" style="--a:3;--b:5;--c:4;--d:2;--e:3;--f:6"><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="meter" style="--v:12"></span><span class="t-v">12%</span>
+                  <span class="t-k">MEM</span><span class="meter" style="--v:33"></span><span class="t-v">33%</span>
+                </p>
+                <p class="t-bar">
+                  <span class="t-k">DSK</span><span class="meter" style="--v:13"></span><span class="t-v">13%</span>
+                  <span class="t-k">NET</span><span class="t-v">↓ 4.9K/s&nbsp; ↑ 6.1K/s</span>
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project reveal" style="--i:1">
+            <div class="project-top">
+              <h3><a href="https://github.com/Lecer69/dots-hyprland" target="_blank" rel="noopener">dots-hyprland</a></h3>
+            </div>
+            <p class="project-meta"><span class="lang lang-qml">QML</span><span class="stars"><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><span data-stars="dots-hyprland">8</span></span><span>Quickshell</span></p>
+            <p>My Hyprland rice, including <strong>lis</strong>: a desktop shell I wrote in Quickshell, with its own bar, lock screen, overview, notifications and panels for media, calendar, gamma and screen time.</p>
+            <p class="project-links"><a href="https://github.com/Lecer69/dots-hyprland" target="_blank" rel="noopener">Repository <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a><a href="#setup">Screenshots <svg class="i" aria-hidden="true"><use href="#i-arrow-down"/></svg></a></p>
+          </article>
+
+          <article class="card project reveal" style="--i:2">
+            <div class="project-top">
+              <h3><a href="https://github.com/Lecer69/wl-gammactl-rust" target="_blank" rel="noopener">wl-gammactl-rust</a></h3>
+              <span class="tag">v0.1.0</span>
+            </div>
+            <p class="project-meta"><span class="lang lang-rust">Rust</span><span class="stars"><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><span data-stars="wl-gammactl-rust">3</span></span><span>Wayland</span></p>
+            <p>Contrast, brightness, gamma and saturation for wlroots compositors like Hyprland. Use the small GUI, or set everything in one line from the CLI.</p>
+            <div class="install">
+              <code>yay -S wl-gammactl-rust</code>
+              <button class="copy-btn" type="button" data-copy="yay -S wl-gammactl-rust" aria-label="Copy install command: yay -S wl-gammactl-rust"><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg><span class="copy-label">Copy</span></button>
+            </div>
+            <p class="project-links"><a href="https://github.com/Lecer69/wl-gammactl-rust" target="_blank" rel="noopener">Repository <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+          </article>
+        </div>
+
+        <div class="toolbox reveal">
+          <h3 class="sub-title">Toolbox</h3>
+          <ul class="keys">
+            <li class="kbd kbd-main" title="My favourite language">Java</li>
+            <li class="kbd">Kotlin</li>
+            <li class="kbd">Rust</li>
+            <li class="kbd">QML</li>
+            <li class="kbd">Bash</li>
+            <li class="kbd">MySQL</li>
+            <li class="kbd">Gradle</li>
+            <li class="kbd">Maven</li>
+            <li class="kbd">Git</li>
+            <li class="kbd">Vim</li>
+            <li class="kbd"><svg class="i" aria-hidden="true"><use href="#i-arch"/></svg>Arch Linux</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── 参 · Setup ───────────── -->
+    <section class="section" id="setup" aria-labelledby="setup-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-num" lang="ja" aria-hidden="true">参</span>
+          <p class="eyebrow">Setup</p>
+          <h2 id="setup-title">lis, my Hyprland shell</h2>
+          <p class="section-lead">Arch Linux and Hyprland, with a desktop shell I wrote in Quickshell (QML) called lis. Dark panels, one accent colour, everything on the keyboard. It even dims my other monitors while osu! is focused. Inspired by end-4's dots and shared as-is in <a href="https://github.com/Lecer69/dots-hyprland" target="_blank" rel="noopener">dots-hyprland</a>.</p>
+        </header>
+
+        <div class="gallery reveal">
+          <a class="shot shot-main" href="assets/img/rice/1.webp" data-lightbox>
+            <img src="assets/img/rice/1-sm.webp" srcset="assets/img/rice/1-sm.webp 800w, assets/img/rice/1.webp 1600w" sizes="(min-width: 960px) 720px, 100vw" width="1600" height="900" loading="lazy" decoding="async" alt="Desktop with btop and an image viewer over a red spider-lily wallpaper">
+          </a>
+          <a class="shot" href="assets/img/rice/2.webp" data-lightbox>
+            <img src="assets/img/rice/2-sm.webp" width="800" height="450" loading="lazy" decoding="async" alt="The keybind cheatsheet panel, grouped into shell, media, window, session and app shortcuts">
+          </a>
+          <a class="shot" href="assets/img/rice/3.webp" data-lightbox>
+            <img src="assets/img/rice/3-sm.webp" width="800" height="450" loading="lazy" decoding="async" alt="osu! running in a window next to an audio visualizer">
+          </a>
+          <a class="shot" href="assets/img/rice/4.webp" data-lightbox>
+            <img src="assets/img/rice/4-sm.webp" width="800" height="450" loading="lazy" decoding="async" alt="The lis settings window with accent colour, notification and workspace overview options">
+          </a>
+        </div>
+
+        <div class="setup-grid">
+          <div class="card setup-card reveal">
+            <h3 class="sub-title">The stack</h3>
+            <dl class="spec">
+              <div><dt>Distro</dt><dd>Arch Linux</dd></div>
+              <div><dt>Compositor</dt><dd>Hyprland</dd></div>
+              <div><dt>Shell</dt><dd>lis (Quickshell, QML)</dd></div>
+              <div><dt>Terminal</dt><dd>kitty + fish</dd></div>
+              <div><dt>Launcher</dt><dd>fuzzel</dd></div>
+              <div><dt>Colours</dt><dd>matugen (Material You)</dd></div>
+            </dl>
+          </div>
+          <div class="card setup-card reveal">
+            <h3 class="sub-title">What lis ships with</h3>
+            <ul class="keys">
+              <li class="kbd">Bar</li><li class="kbd">Lock screen</li><li class="kbd">Overview</li><li class="kbd">Notifications</li><li class="kbd">Media</li><li class="kbd">Calendar</li><li class="kbd">Wellbeing</li><li class="kbd">Gamma</li><li class="kbd">Battery</li><li class="kbd">Volume</li><li class="kbd">Brightness</li><li class="kbd">Internet usage</li><li class="kbd">To-do</li><li class="kbd">Cheatsheet</li><li class="kbd">Polkit agent</li><li class="kbd">osu! backdrop</li>
+            </ul>
+            <div class="install install-block">
+              <pre><code>git clone https://github.com/Lecer69/dots-hyprland.git
+cd dots-hyprland &amp;&amp; bash install.sh</code></pre>
+              <button class="copy-btn" type="button" data-copy="git clone https://github.com/Lecer69/dots-hyprland.git && cd dots-hyprland && bash install.sh" aria-label="Copy install commands"><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg><span class="copy-label">Copy</span></button>
+            </div>
+            <p class="footnote">Arch-based distros only, and honestly not beginner-friendly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── 肆 · osu! ───────────── -->
+    <section class="section" id="osu" aria-labelledby="osu-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-num" lang="ja" aria-hidden="true">肆</span>
+          <p class="eyebrow">osu!</p>
+          <h2 id="osu-title">Clicking circles since 2023</h2>
+          <p class="section-lead">osu!standard on a Wacom tablet and a Hall-effect keyboard, full alternate. EZ, DT, HR, NM: I love them all. Numbers below are a snapshot from 20 October 2026; the live ones are on <a href="https://osu.ppy.sh/users/34021726" target="_blank" rel="noopener">my profile</a>.</p>
+        </header>
+
+        <div class="osu-grid">
+          <article class="card osu-profile reveal">
+            <div class="osu-cover"><img src="assets/img/osu-cover.webp" width="1440" height="360" loading="lazy" decoding="async" alt=""></div>
+            <div class="osu-id">
+              <img class="osu-avatar" src="assets/img/osu-avatar.webp" width="160" height="160" loading="lazy" decoding="async" alt="osu! avatar: a chibi Yuyuko">
+              <div>
+                <h3>Lecer</h3>
+                <p class="osu-sub">formerly Lecer69 · Tehran, Iran</p>
+              </div>
+            </div>
+            <a class="osu-team" href="https://osu.ppy.sh/teams/970" target="_blank" rel="noopener"><img src="assets/img/team-flag.webp" width="48" height="24" alt="" loading="lazy"><span><b>[PRO]</b> karmamafia</span></a>
+            <ul class="chips chips-sm">
+              <li>osu! supporter</li><li>Level 101</li><li>keyboard + tablet</li><li>100 medals</li>
+            </ul>
+            <p class="grades"><span class="grade grade-ss">SS</span>18 <span class="grade grade-s">S</span>219 <span class="grade grade-a">A</span>1,533</p>
+            <blockquote class="quote">“I don't care how much time it takes, I won't give up.”</blockquote>
+            <a class="btn btn-ghost btn-sm" href="https://osu.ppy.sh/users/34021726" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-osu"/></svg> osu! profile <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          </article>
+
+          <article class="card rank-card reveal">
+            <div class="rank-head">
+              <div>
+                <p class="tile-label">Global rank</p>
+                <p class="tile-value">#21,271</p>
+                <p class="tile-delta"><svg class="i" aria-hidden="true"><use href="#i-trend-up"/></svg>9,894 places up in the last 90 days</p>
+              </div>
+              <p class="tile-note">Peak #21,062<br><span>27 Aug 2026</span></p>
+            </div>
+            <figure class="chart" data-rank-chart>
+              <figcaption class="chart-title">Global rank, last 90 days <span>(higher is better)</span></figcaption>
+              <div class="chart-plot" tabindex="0" role="group" aria-label="Rank chart. Use the left and right arrow keys to read daily ranks.">
+                <div class="chart-tip" hidden aria-hidden="true"><strong class="chart-tip-value"></strong><span class="chart-tip-date"></span></div>
+              </div>
+              <details class="chart-table">
+                <summary>Daily ranks as a table</summary>
+                <div class="table-wrap"><table><thead><tr><th scope="col">Date</th><th scope="col">Global rank</th></tr></thead><tbody></tbody></table></div>
+              </details>
+            </figure>
+            <script type="application/json" id="rank-data">{"end":"2026-10-20","ranks":[31165,28438,25993,26016,26038,26034,25883,25904,25918,25939,25961,25456,25476,25484,25503,23977,23991,24016,23912,23928,23944,23944,23418,23271,22517,22533,21838,21853,21864,21869,21495,21516,21530,21541,21221,21067,21078,21104,21114,21128,21140,21152,21164,21180,21208,21221,21235,21251,21260,21271,21295,21221,21236,21254,21274,21293,21307,21329,21346,21370,21387,21400,21414,21436,21452,21462,21473,21489,21504,21520,21532,21534,21550,21569,21584,21604,21624,21641,21654,21670,21672,21682,21690,21708,21719,21232,21246,21256,21271,21271]}</script>
+          </article>
+        </div>
+
+        <dl class="osu-stats reveal">
+          <div class="tile"><dt>Country rank</dt><dd>#9</dd><dd class="tile-foot">Iran</dd></div>
+          <div class="tile"><dt>Performance</dt><dd>8,134pp</dd><dd class="tile-foot">osu!standard</dd></div>
+          <div class="tile"><dt>Accuracy</dt><dd>96.88%</dd><dd class="tile-foot">hit accuracy</dd></div>
+          <div class="tile"><dt>Play count</dt><dd>86,625</dd><dd class="tile-foot">since Jul 2023</dd></div>
+          <div class="tile"><dt>Play time</dt><dd>1,599h</dd><dd class="tile-foot">about 66 days</dd></div>
+          <div class="tile"><dt>Max combo</dt><dd>3,263x</dd><dd class="tile-foot">longest combo</dd></div>
+        </dl>
+
+        <div class="osu-bottom">
+          <article class="card plays reveal">
+            <h3 class="sub-title">Top plays</h3>
+            <ol class="play-list">
+              <li class="play">
+                <span class="grade grade-a"><span class="sr-only">Grade </span>A</span>
+                <div class="play-main">
+                  <a class="play-title" href="https://osu.ppy.sh/beatmaps/5258382" target="_blank" rel="noopener">Power of the Dragonflame</a>
+                  <span class="play-sub">Rhapsody · [Uri's Extreme]</span>
+                </div>
+                <div class="play-meta"><span class="mod">HR</span><span>96.65%</span></div>
+                <span class="pp">480<small>pp</small></span>
+              </li>
+              <li class="play">
+                <span class="grade grade-s"><span class="sr-only">Grade </span>S</span>
+                <div class="play-main">
+                  <a class="play-title" href="https://osu.ppy.sh/beatmaps/4647289" target="_blank" rel="noopener">Aragami (Short Ver.)</a>
+                  <span class="play-sub">xi · [Transcend]</span>
+                </div>
+                <div class="play-meta"><span class="mod">HR</span><span>97.00%</span></div>
+                <span class="pp">449<small>pp</small></span>
+              </li>
+              <li class="play">
+                <span class="grade grade-a"><span class="sr-only">Grade </span>A</span>
+                <div class="play-main">
+                  <a class="play-title" href="https://osu.ppy.sh/beatmaps/5671885" target="_blank" rel="noopener">Heartless (Cut Ver.)</a>
+                  <span class="play-sub">Pythia · [Indifference]</span>
+                </div>
+                <div class="play-meta"><span class="mod">HR</span><span>96.89%</span></div>
+                <span class="pp">439<small>pp</small></span>
+              </li>
+              <li class="play">
+                <span class="grade grade-s"><span class="sr-only">Grade </span>S</span>
+                <div class="play-main">
+                  <a class="play-title" href="https://osu.ppy.sh/beatmaps/4545563" target="_blank" rel="noopener">Violet SunLight</a>
+                  <span class="play-sub">cygnus · [Another]</span>
+                </div>
+                <div class="play-meta"><span class="mod">DT</span><span>96.02%</span></div>
+                <span class="pp">426<small>pp</small></span>
+              </li>
+              <li class="play">
+                <span class="grade grade-a"><span class="sr-only">Grade </span>A</span>
+                <div class="play-main">
+                  <a class="play-title" href="https://osu.ppy.sh/beatmaps/5129350" target="_blank" rel="noopener">Pure Furies ~ Vengeance is Mine</a>
+                  <span class="play-sub">Demetori · [The pristine spiritual force that rejects life and death.]</span>
+                </div>
+                <div class="play-meta"><span class="mod mod-nm">NM</span><span>98.19%</span></div>
+                <span class="pp">426<small>pp</small></span>
+              </li>
+            </ol>
+          </article>
+
+          <article class="card osu-setup reveal">
+            <h3 class="sub-title">Setup</h3>
+            <dl class="spec">
+              <div><dt>Tablet</dt><dd>Wacom CTL-672</dd></div>
+              <div><dt>Keyboard</dt><dd>Aula 68 HE / Drunkdeer A75 Ultra</dd></div>
+              <div><dt>Monitor</dt><dd>144 Hz VA, 24″ curved</dd></div>
+              <div><dt>Tapping</dt><dd>Middle &amp; index, full alternate</dd></div>
+              <div><dt>Grip</dt><dd>Between mrekk's and chocomint's pen grip</dd></div>
+              <div><dt>Rapid trigger</dt><dd>0.3 mm actuation, 0.15 mm RT</dd></div>
+            </dl>
+            <p class="goals"><span class="tile-label">Next goals</span>A 1K pp play · 1K-note streams at 270 BPM · 500 BPM aim</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── 伍 · Music ───────────── -->
+    <section class="section" id="music" aria-labelledby="music-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-num" lang="ja" aria-hidden="true">伍</span>
+          <p class="eyebrow">Music</p>
+          <h2 id="music-title">Mostly metal</h2>
+          <p class="section-lead">Going by my Spotify, it's metal, almost all of it: Japanese doujin and Touhou-arrange metal, symphonic deathcore and fast power metal. Most of it ends up in <strong>osu!metal</strong>, the playlist I play to.</p>
+        </header>
+
+        <div class="music-grid">
+          <div class="music-main reveal">
+            <ul class="chips" aria-label="Genres">
+              <li>J-metal &amp; doujin</li><li>Touhou arranges</li><li>Symphonic deathcore</li><li>Power metal</li><li>Melodic death</li><li>Progressive metal</li><li>Japanese metalcore</li>
+            </ul>
+
+            <figure class="card bars" data-bars>
+              <figcaption><span class="tile-label">Most featured on osu!metal</span><span class="bars-unit">tracks, out of 100</span></figcaption>
+              <ol class="bar-list" style="--max:28">
+                <li class="bar-row" style="--v:28" tabindex="0" data-tip="28 of 100 tracks"><span class="bar-label">Imperial Circus Dead Decadence</span><span class="bar-line"><span class="bar"></span><span class="bar-value">28</span></span></li>
+                <li class="bar-row" style="--v:13" tabindex="0" data-tip="13 of 100 tracks"><span class="bar-label">UNDEAD CORPORATION</span><span class="bar-line"><span class="bar"></span><span class="bar-value">13</span></span></li>
+                <li class="bar-row" style="--v:10" tabindex="0" data-tip="10 of 100 tracks"><span class="bar-label">Lorna Shore</span><span class="bar-line"><span class="bar"></span><span class="bar-value">10</span></span></li>
+                <li class="bar-row" style="--v:7" tabindex="0" data-tip="7 of 100 tracks"><span class="bar-label">Unlucky Morpheus</span><span class="bar-line"><span class="bar"></span><span class="bar-value">7</span></span></li>
+                <li class="bar-row" style="--v:6" tabindex="0" data-tip="6 of 100 tracks"><span class="bar-label">DragonForce</span><span class="bar-line"><span class="bar"></span><span class="bar-value">6</span></span></li>
+                <li class="bar-row" style="--v:6" tabindex="0" data-tip="6 of 100 tracks"><span class="bar-label">Futakuchi Mana</span><span class="bar-line"><span class="bar"></span><span class="bar-value">6</span></span></li>
+                <li class="bar-row" style="--v:6" tabindex="0" data-tip="6 of 100 tracks"><span class="bar-label">Ne Obliviscaris</span><span class="bar-line"><span class="bar"></span><span class="bar-value">6</span></span></li>
+              </ol>
+              <div class="bar-tip" hidden aria-hidden="true"></div>
+              <p class="footnote">Then Kardashev, Release Hallucination, Fleshgod Apocalypse, Adust Rain and a long tail.</p>
+            </figure>
+          </div>
+
+          <aside class="music-side reveal" aria-label="Playlist">
+            <div class="card spotify" data-spotify="https://open.spotify.com/embed/playlist/3hMktqcGxzt5YmownKq3ki?utm_source=generator&amp;theme=0">
+              <div class="spotify-head">
+                <img src="assets/img/osu-metal.webp" width="240" height="240" loading="lazy" decoding="async" alt="osu!metal playlist cover">
+                <div>
+                  <p class="tile-label">Playlist</p>
+                  <h3>osu!metal</h3>
+                  <p class="spotify-sub">Lecer · 100 tracks</p>
+                </div>
+              </div>
+              <a class="btn btn-primary btn-block" href="https://open.spotify.com/playlist/3hMktqcGxzt5YmownKq3ki" target="_blank" rel="noopener" data-spotify-load><svg class="i" aria-hidden="true"><use href="#i-play"/></svg> Play it here</a>
+              <p class="footnote">Loads Spotify's player, which sets Spotify cookies. Or <a href="https://open.spotify.com/playlist/3hMktqcGxzt5YmownKq3ki" target="_blank" rel="noopener">open it in Spotify</a>.</p>
+            </div>
+
+            <div class="card repeat">
+              <p class="tile-label">Lately on repeat</p>
+              <ul class="repeat-list">
+                <li><a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO3QAZKG" target="_blank" rel="noopener">Lorna Shore</a></li>
+                <li><a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO0hfIYM" target="_blank" rel="noopener">Crystal Lake</a></li>
+                <li><a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO0rfxdx" target="_blank" rel="noopener">Broken By The Scream</a></li>
+                <li><a href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO3UBR0Q" target="_blank" rel="noopener">Yousei Teikoku</a></li>
+              </ul>
+              <p class="footnote">Also on my favourites list: Aether Realm, Brymir, Kardashev, Shadow of Intent, Worm Shepherd, Linkin Park and System of a Down.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── 陸 · Contact ───────────── -->
+    <section class="section section-last" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <header class="section-head reveal">
+          <span class="section-num" lang="ja" aria-hidden="true">陸</span>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Say hi</h2>
+          <p class="section-lead">Want to be osu! mutuals, or talk Java and Minecraft plugins? Discord is the quickest way to reach me. I'm not taking on projects right now, but I'm always up for a chat.</p>
+        </header>
+
+        <ul class="links reveal">
+          <li>
+            <button class="link-row" type="button" data-copy="lecer" aria-label="Copy Discord username: lecer">
+              <svg class="i" aria-hidden="true"><use href="#i-discord"/></svg>
+              <span class="link-name">Discord</span>
+              <span class="link-handle">lecer</span>
+              <span class="link-action"><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg><span class="copy-label">Copy</span></span>
+            </button>
+          </li>
+          <li>
+            <a class="link-row" href="https://x.com/Lecerosu" target="_blank" rel="noopener">
+              <svg class="i" aria-hidden="true"><use href="#i-x"/></svg>
+              <span class="link-name">X</span>
+              <span class="link-handle">@Lecerosu</span>
+              <span class="link-action"><svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span>
+            </a>
+          </li>
+          <li>
+            <a class="link-row" href="https://github.com/Lecer69" target="_blank" rel="noopener">
+              <svg class="i" aria-hidden="true"><use href="#i-github"/></svg>
+              <span class="link-name">GitHub</span>
+              <span class="link-handle">@Lecer69</span>
+              <span class="link-action"><svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span>
+            </a>
+          </li>
+          <li>
+            <a class="link-row" href="https://osu.ppy.sh/users/34021726" target="_blank" rel="noopener">
+              <svg class="i" aria-hidden="true"><use href="#i-osu"/></svg>
+              <span class="link-name">osu!</span>
+              <span class="link-handle">Lecer</span>
+              <span class="link-action"><svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span>
+            </a>
+          </li>
+          <li>
+            <a class="link-row" href="https://open.spotify.com/user/o24onkbiz6sjc26oyu5uyhu13" target="_blank" rel="noopener">
+              <svg class="i" aria-hidden="true"><use href="#i-spotify"/></svg>
+              <span class="link-name">Spotify</span>
+              <span class="link-handle">Lecer</span>
+              <span class="link-action"><svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <svg class="emblem" aria-hidden="true"><use href="#i-emblem"/></svg>
+        <div><strong>Lecer</strong><span>© 2026 Arshia</span></div>
+      </div>
+      <p class="footer-poem"><span lang="ja">幽雅に咲かせ、墨染の桜</span><span>Bloom nobly, ink-black cherry blossom</span></p>
+      <div class="footer-notes">
+        <p>No cookies here. Yuyuko ate them all.</p>
+        <p>Saigyouji Yuyuko is from Touhou Project by ZUN.</p>
+        <a class="to-top" href="#top">Back to top <svg class="i" aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Screenshot">
+    <button class="lightbox-close icon-btn" type="button" data-close aria-label="Close"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <p class="lightbox-cap"></p>
+  </dialog>
+
+  <p class="sr-only" aria-live="polite" id="live"></p>
+</body>
+</html>
