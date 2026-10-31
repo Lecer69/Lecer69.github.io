@@ -3,57 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- the deploy workflow points this at the site root, so assets load from any missing URL -->
+  <base href="/">
   <title>Lost in the Netherworld · Lecer</title>
   <meta name="robots" content="noindex">
   <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#0c0a12">
-  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <meta name="theme-color" content="#0e0b10">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&amp;family=JetBrains+Mono:wght@400..500&amp;family=Shippori+Mincho:wght@700&amp;display=swap">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <script src="/assets/js/main.js" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&amp;family=Exo+2:wght@700..800&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
   <style>
-    .lost { min-height: 100vh; min-height: 100svh; display: grid; place-items: center; padding: 120px var(--gutter) 64px; text-align: center; }
-    .lost-mark { position: relative; width: 168px; aspect-ratio: 1; margin: 0 auto 28px; }
-    .lost-mark .ring { animation-duration: 90s; }
-    .lost-mark span { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-jp); font-weight: 600; font-size: 64px; color: transparent; -webkit-text-stroke: 1px rgba(245, 163, 192, 0.7); }
-    .lost h1 { margin: 0 0 14px; font-family: var(--font-serif); font-weight: 700; font-size: clamp(32px, 3vw + 18px, 52px); line-height: 1.1; }
-    .lost p { max-width: 34em; margin: 0 auto 28px; color: var(--text-2); font-size: 17px; }
-    .lost .eyebrow { justify-content: center; }
+    .lost { min-height: calc(100vh - var(--nav-h)); min-height: calc(100svh - var(--nav-h)); display: grid; place-items: center; padding: 48px var(--gutter); }
+    .lost-inner { max-width: 520px; }
+    .lost .lost-code { margin: 0; color: var(--pink); font: 800 clamp(88px, 18vw, 160px)/0.9 var(--font-display); letter-spacing: -0.04em; }
+    .lost h1 { margin: 18px 0 12px; font-size: clamp(28px, 3vw + 14px, 40px); font-weight: 800; }
+    .lost p { margin-bottom: 28px; color: var(--text-2); font-size: 17px; }
   </style>
 </head>
 <body>
+  <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="i-emblem" viewBox="0 0 32 32">
+      <path d="M16 5.5 27.5 26h-23Z" fill="#f6eff8" stroke="#f6eff8" stroke-width="2.6" stroke-linejoin="round"/>
+      <path d="M16 19.5a1.2 1.2 0 0 1 2.4 0 2.4 2.4 0 0 1-4.8 0 3.6 3.6 0 0 1 7.2 0" fill="none" stroke="#e5484d" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
   <canvas id="petals" aria-hidden="true"></canvas>
 
-  <header class="site-header">
-    <nav class="nav" aria-label="Main">
-      <a class="brand" href="/">
-        <svg class="emblem" viewBox="0 0 32 32" aria-hidden="true">
-          <path d="M16 5.5 27.5 26h-23Z" fill="#f6eff8" stroke="#f6eff8" stroke-width="2.6" stroke-linejoin="round"/>
-          <path d="M16 19.5a1.2 1.2 0 0 1 2.4 0 2.4 2.4 0 0 1-4.8 0 3.6 3.6 0 0 1 7.2 0" fill="none" stroke="#e5484d" stroke-width="1.7" stroke-linecap="round"/>
-        </svg>
-        <span>Lecer</span>
+  <header class="topbar">
+    <nav class="container nav" aria-label="Main">
+      <a class="brand" href="./">
+        <svg class="emblem" aria-hidden="true"><use href="#i-emblem"/></svg>
+        <span class="brand-name">Lecer</span>
       </a>
     </nav>
   </header>
 
   <main class="lost">
-    <div>
-      <div class="lost-mark" aria-hidden="true">
-        <svg class="ring" viewBox="0 0 400 400" focusable="false">
-          <defs><path id="lost-ring" d="M40 200a160 160 0 1 1 320 0a160 160 0 1 1-320 0"/></defs>
-          <circle class="ring-line" cx="200" cy="200" r="194"/>
-          <circle class="ring-line ring-line--dash" cx="200" cy="200" r="132"/>
-          <text class="ring-text" style="font-size: 24px; letter-spacing: 2px"><textPath href="#lost-ring">白玉楼 · Border of Life · 白玉楼 · Border of Life · 白玉楼 · Border of Life ·</textPath></text>
-        </svg>
-        <span>迷</span>
-      </div>
-      <p class="eyebrow">404</p>
+    <div class="lost-inner">
+      <p class="lost-code" aria-hidden="true">404</p>
       <h1>Lost in the Netherworld</h1>
-      <p>This page has drifted off to Hakugyokurou. Even Yuyuko couldn't find it, and she can find any snack.</p>
-      <a class="btn btn-primary" href="/">Back to the living world</a>
+      <p>This page drifted off to Hakugyokurou. Even Yuyuko couldn't find it, and she can find any snack.</p>
+      <a class="btn btn-primary" href="./">Back to the living world</a>
     </div>
   </main>
 </body>
