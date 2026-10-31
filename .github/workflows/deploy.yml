@@ -40,7 +40,6 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
           OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
-          DUMBLE_TOKEN: ${{ secrets.DUMBLE_TOKEN }}
 
       - name: Collect the site
         env:

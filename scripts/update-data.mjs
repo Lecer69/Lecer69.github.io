@@ -14,7 +14,6 @@
  *   github   GitHub REST API + the public contributions calendar on github.com
  *   dots     the dots-hyprland repo: the preview screenshot and the modules of the lis shell
  *   aur      AUR RPC, every package Lecer maintains
- *   dumble   per-plugin stats for the private Dumble Land repos; only when DUMBLE_TOKEN is set
  *
  * When a source fails, its previous value is kept (from the last local run, or from the live
  * site in CI), so one flaky service can't blank a section.
@@ -26,10 +25,6 @@ const OSU_USER = 34021726;
 const GITHUB_USER = 'Lecer69';
 const AUR_MAINTAINER = 'Lecer';
 const DOTS = { repo: 'dots-hyprland', screenshots: 'preview/', shell: 'dots/quickshell/lis/' };
-const DUMBLE = {
-  org: 'Dumble-Development',
-  repos: ['DumbolRolePlay', 'DumbolExpansion', 'DumbolNetwork', 'DumbolEssentials', 'DumbolDiscord', 'DumbolCurrency'],
-};
 
 const env = process.env;
 const OUT = process.argv[2] ?? 'data/site.json';
@@ -64,12 +59,12 @@ const decodeEntities = (s) => s.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (match,
   return { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: '\u00a0' }[e.toLowerCase()] ?? match;
 });
 
-const ghHeaders = (token = env.GITHUB_TOKEN) => ({
+const ghHeaders = {
   Accept: 'application/vnd.github+json',
   'X-GitHub-Api-Version': '2022-11-28',
-  ...(token ? { Authorization: `Bearer ${token}` } : {}),
-});
-const gh = (path, token) => getJson(`https://api.github.com/${path}`, { headers: ghHeaders(token) });
+  ...(env.GITHUB_TOKEN ? { Authorization: `Bearer ${env.GITHUB_TOKEN}` } : {}),
+};
+const gh = (path) => getJson(`https://api.github.com/${path}`, { headers: ghHeaders });
 
 /* ---------- osu! ---------- */
 
@@ -146,7 +141,7 @@ async function github() {
   const [user, repos, readme, calendar] = await Promise.all([
     gh(`users/${GITHUB_USER}`),
     gh(`users/${GITHUB_USER}/repos?per_page=100&type=owner&sort=pushed`),
-    getText(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_USER}/readme`, { headers: { ...ghHeaders(), Accept: 'application/vnd.github.raw' } }).catch(() => ''),
+    getText(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_USER}/readme`, { headers: { ...ghHeaders, Accept: 'application/vnd.github.raw' } }).catch(() => ''),
     contributionsPage(),
   ]);
 
@@ -284,46 +279,9 @@ async function aur() {
     .sort((a, b) => b.votes - a.votes || b.popularity - a.popularity || a.name.localeCompare(b.name));
 }
 
-/* ---------- Dumble Land (private repos, optional) ---------- */
-
-async function dumble(previous) {
-  const token = env.DUMBLE_TOKEN;
-  if (!token) return null; // the page then lists the plugins without numbers
-
-  // GitHub computes repo statistics lazily and answers 202 until they're ready (can take a minute)
-  const contributorStats = async (path) => {
-    for (let attempt = 0; attempt < 15; attempt++) {
-      const res = await request(`https://api.github.com/${path}/stats/contributors`, { headers: ghHeaders(token) });
-      if (res.status === 200) return res.json();
-      if (res.status === 204) return []; // empty repo
-      await sleep(6000);
-    }
-    throw new Error(`${path} stats were still being computed`);
-  };
-
-  const plugins = await Promise.all(DUMBLE.repos.map(async (name) => {
-    const path = `repos/${DUMBLE.org}/${name}`;
-    const [repo, contributors] = await Promise.all([gh(path, token), contributorStats(path).catch((err) => {
-      log('notice', `dumble: ${err.message}${previous?.[name] ? `, kept the previous numbers for ${name}` : ''}`);
-      return null;
-    })]);
-    if (!contributors) return [name, previous?.[name] ?? null];
-    const mine = contributors.find((c) => c.author?.login?.toLowerCase() === GITHUB_USER.toLowerCase());
-    const weeks = contributors.flatMap((c) => c.weeks);
-    const firstWeek = Math.min(...weeks.filter((w) => w.c > 0).map((w) => w.w));
-    return [name, {
-      commits: mine?.total ?? 0,
-      lines: weeks.reduce((sum, w) => sum + w.a - w.d, 0), // net lines added, so roughly the size of the codebase today
-      since: new Date((Number.isFinite(firstWeek) ? firstWeek * 1000 : Date.parse(repo.created_at))).getUTCFullYear(),
-      pushedAt: repo.pushed_at,
-    }];
-  }));
-  return Object.fromEntries(plugins);
-}
-
 /* ---------- main ---------- */
 
-const sources = { osu, github, dots, aur, dumble };
+const sources = { osu, github, dots, aur };
 
 const log = (level, message) => {
   if (env.GITHUB_ACTIONS && level !== 'notice') console.log(`::${level}::${message}`);

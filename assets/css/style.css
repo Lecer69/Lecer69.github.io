@@ -200,7 +200,6 @@ html:not(.js) [data-requires], html:not(.js) [data-render] { display: none !impo
   outline: 6px solid var(--bg-1);
   background: var(--bg-3);
   object-fit: cover;
-  cursor: pointer;
 }
 
 .bfly { position: absolute; width: 34px; pointer-events: none; }
@@ -275,20 +274,14 @@ html[data-missing~='repos'] .data-missing[data-missing='repos'] { display: block
 .plugin-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
 .plugin {
   display: grid;
-  grid-template-columns: 220px minmax(0, 1fr) auto;
-  grid-template-areas: 'name desc stats';
+  grid-template-columns: 220px minmax(0, 1fr);
+  grid-template-areas: 'name desc';
   gap: 6px 28px;
   align-items: baseline;
   padding: 18px 16px;
 }
 .plugin-name { grid-area: name; font-size: 18px; }
 .plugin-desc { grid-area: desc; color: var(--text-2); }
-.plugin-stats {
-  grid-area: stats;
-  display: flex; gap: 16px;
-  margin: 0; color: var(--text-3); font-size: 14px; white-space: nowrap;
-}
-.plugin-stats b { color: var(--text); font: 700 15px/1 var(--font-display); }
 
 .also { margin-top: 56px; }
 .also-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 32px; margin: 0; }
@@ -583,8 +576,7 @@ html[data-missing~='repos'] .data-missing[data-missing='repos'] { display: block
 
 /* ───────────── responsive ───────────── */
 @media (max-width: 1080px) {
-  .plugin { grid-template-columns: 190px minmax(0, 1fr); grid-template-areas: 'name desc' '. stats'; }
-  .plugin-stats { justify-content: flex-start; }
+  .plugin { grid-template-columns: 190px minmax(0, 1fr); }
   .also-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
@@ -616,7 +608,7 @@ html[data-missing~='repos'] .data-missing[data-missing='repos'] { display: block
   .stat { padding: 14px 14px; }
   .stat:nth-child(odd) { padding-left: 0; }
   .stat dd:not(.stat-foot) { font-size: 24px; }
-  .plugin { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'name' 'desc' 'stats'; padding: 16px 0; }
+  .plugin { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'name' 'desc'; padding: 16px 0; }
   .plugin::before { left: -16px; }
   .repo { padding: 16px 0; }
   .repo-meta { gap: 6px 14px; }

@@ -229,25 +229,22 @@
     }
   }
 
-  /* ---------- Dumble Land: live numbers when the workflow has repo access ---------- */
-  function renderDumble(data) {
-    if (!data.dumble) return;
-    for (const row of $$('[data-plugin]')) {
-      const stats = data.dumble[row.dataset.plugin];
-      if (!stats) continue;
-      row.append(h('p', { class: 'plugin-stats' },
-        h('span', {}, h('b', {}, nf.format(stats.commits)), ' commits'),
-        h('span', {}, h('b', {}, compact.format(stats.lines)), ' lines'),
-        h('span', {}, 'since ', h('b', {}, String(stats.since))),
-      ));
-    }
-  }
-
   /* ---------- open source ---------- */
   const LANG_COLORS = {
     Rust: '#dea584', QML: '#44a51c', Java: '#b07219', Kotlin: '#a97bff', JavaScript: '#f1e05a', TypeScript: '#3178c6',
     Python: '#3572a5', Shell: '#89e051', Go: '#00add8', 'C++': '#f34b7d', C: '#8a8a8a', Lua: '#5a6bd6', HTML: '#e34c26', CSS: '#663399',
   };
+
+  // the newer of the repo's newest git tag and its AUR package: releases don't always get a tag
+  // (LSSH sat at its v0.1.0 tag while the AUR had 0.4.0)
+  function latestVersion(tag, pkg) {
+    const bare = (v) => v.replace(/^v/i, '');
+    const aur = pkg?.version?.replace(/^\d+:/, '').replace(/-[^-]*$/, ''); // drop the epoch and pkgrel
+    if (!aur || (tag && bare(tag.tag).localeCompare(aur, 'en', { numeric: true }) >= 0)) {
+      return tag && { ...tag, title: 'Latest tag on GitHub' };
+    }
+    return { tag: tag && /^v/i.test(tag.tag) ? `v${aur}` : aur, url: pkg.url, title: 'Latest version, on the AUR' };
+  }
 
   function renderRepos(data) {
     const list = $('[data-render="repos"]');
@@ -257,10 +254,11 @@
 
     list.replaceChildren(...repos.map((repo) => {
       const pkg = packages.get(repo.url.toLowerCase());
+      const version = latestVersion(repo.version, pkg);
       return h('li', { class: 'repo' },
         h('h3', { class: 'repo-name' },
           h('a', { href: safeUrl(repo.url), ...external }, repo.name),
-          repo.version && h('a', { class: 'repo-version', href: safeUrl(repo.version.url), ...external, title: 'Latest version' }, repo.version.tag)),
+          version && h('a', { class: 'repo-version', href: safeUrl(version.url), ...external, title: version.title }, version.tag)),
         repo.description && h('p', { class: 'repo-desc' }, repo.description),
         repo.topics.length > 0 && h('ul', { class: 'repo-topics', 'aria-label': 'Topics' }, repo.topics.map((t) => h('li', {}, t))),
         h('p', { class: 'repo-meta' },
@@ -701,13 +699,12 @@
     });
     start();
 
-    // a gust of petals: tap the avatar, or type "yuyuko" anywhere
+    // a gust of petals: type "yuyuko" anywhere
     const burst = (x, y, count) => {
       if (reduceMotion.matches) return;
       for (let i = 0; i < count; i++) list.push(make(x, y, true));
       start();
     };
-    $('.hero-art .avatar')?.addEventListener('click', (event) => burst(event.clientX, event.clientY, 36));
     let typed = '';
     document.addEventListener('keydown', (event) => {
       if (event.ctrlKey || event.metaKey || event.altKey || event.key.length !== 1) return;
@@ -842,7 +839,6 @@
 
     const pending = new Set(Object.keys(live));
     run(bind, data, pending);
-    run(renderDumble, data);
     run(renderRepos, data);
     run(renderAur, data);
     run(renderSkills, data);

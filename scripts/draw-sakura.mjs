@@ -154,9 +154,10 @@ for (const [at, angle, length] of [[0.5, -2.6, 64], [0.7, -2.2, 80]]) {
   bloom(shoot, { along: 0.15, cluster: [2, 4], tip: [5, 8] });
 }
 
-/* weeping strands: thin, swaying, strung with flowers; the ones that reach the avatar hang in front */
+/* weeping strands: thin and strung with flowers; the ones that reach the avatar hang in front */
 function strand(parent, at, length) {
   const [x, y] = parent.pts[Math.floor(at * (parent.pts.length - 1))];
+  // dur and delay drove the old sway animation; they still draw from the RNG so the seed keeps its tree
   const sway = { x, y, dur: between(5.5, 9.5), delay: -between(0, 9) };
   const pts = walk(x, y + 1, DOWN + between(-0.7, 0.7), length, -between(0.05, 0.09));
   const s = addBranch(pts, between(1.3, 1.8), 0.6, 3, { sway });
@@ -223,12 +224,12 @@ const style = `<style>
 .shine{fill:none;stroke:#7a4b62;stroke-opacity:.6;stroke-linecap:round;stroke-linejoin:round}
 .dim{opacity:.58}
 .far{opacity:.34;filter:url(#blur)}
-@media (prefers-reduced-motion:no-preference){.sway{animation:sway var(--d) ease-in-out var(--l) infinite alternate;transform-box:view-box}}
-@keyframes sway{from{transform:rotate(-1.8deg)}to{transform:rotate(1.8deg)}}
 </style>`;
 
 function render(front) {
-  const groups = new Map(); // sway → markup, so a strand and its flowers move together
+  // no animation in here: an animated SVG image is redrawn in full every frame, ~1,300 blossoms and a blur
+  // filter, which made the hero lag; a strand's flowers are still drawn right after the strand
+  const groups = new Map(); // strand → markup
   const add = (sway, markup) => groups.set(sway, (groups.get(sway) ?? '') + markup);
   for (const b of branches) {
     if (b.front !== front) continue;
@@ -244,11 +245,7 @@ function render(front) {
   let backdrop = far.length ? `<g class="far">${far.map(use).join('')}</g>` : '';
   for (const fl of near) add(fl.sway, use(fl).replace('<use ', fl.far ? '<use opacity=".3" ' : '<use '));
   let body = backdrop ? `\n${backdrop}` : '';
-  for (const [sway, markup] of groups) {
-    body += sway
-      ? `\n<g class="sway" style="transform-origin:${f(sway.x)}px ${f(sway.y)}px;--d:${f(sway.dur)}s;--l:${f(sway.delay)}s">${markup}</g>`
-      : `\n${markup}`;
-  }
+  for (const markup of groups.values()) body += `\n${markup}`;
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${SIZE} ${SIZE}">\n${style}\n${defs}${body}\n</svg>\n`;
 }
 
